@@ -1,0 +1,52 @@
+{
+    "name": "mcp_cronjob",
+    "version": "0.1.0",
+    "description": "Cronjob for MCP Client",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/index.js example/config.json",
+        "dev": "tsx src/index.ts example/config.json",
+        "package-mac-intel": "pkg . --targets node18-macos-x64 --output executables/mcp_cronjob-macos-x64",
+        "package-mac-arm": "pkg . --targets node18-macos-arm64 --output executables/mcp_cronjob-macos-arm64",
+        "package-win": "pkg . --targets node18-win-x64 --output executables/mcp_cronjob-win-x64.exe"
+    },
+    "bin": "dist/index.js",
+    "pkg": {
+        "targets": [
+            "node18-win-x64",
+            "node18-macos-x64",
+            "node18-macos-arm64"
+        ],
+        "outputPath": "executables",
+        "assets": [
+            "dist/**/*",
+            "src/**/*"
+        ]
+    },
+    "keywords": [
+        "mcp",
+        "client",
+        "executable",
+        "mcp_cronjob.exe"
+    ],
+    "author": "shadow",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/shadowcz007/mcp_cronjob/issues"
+    },
+    "homepage": "https://github.com/shadowcz007/mcp_cronjob.exe#readme",
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.11.3",
+        "node-cron": "^4.0.7",
+        "node-notifier": "^10.0.1"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.21",
+        "@types/node": "^20.17.50",
+        "pkg": "^5.8.1",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.19.4",
+        "typescript": "^5.8.3"
+    }
+}
