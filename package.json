@@ -1,6 +1,6 @@
 {
     "name": "mcp_cronjob",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Cronjob for MCP Client",
     "main": "dist/index.js",
     "scripts": {
